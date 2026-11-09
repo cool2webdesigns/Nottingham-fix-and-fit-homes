@@ -1,0 +1,1171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101a2d">
+<meta name="description" content="Nottingham Fix & Fit - handyman, painting, plastering, decorating, wall partitioning and home improvement services in Nottingham.">
+<title>Nottingham Fix & Fit | Handyman & Home Improvements</title>
+
+<style>
+:root {
+  --navy:#101a2d;
+  --navy2:#1c2d49;
+  --orange:#f59e0b;
+  --light:#f4f6fa;
+  --white:#fff;
+  --text:#182235;
+  --muted:#667085;
+  --border:#e4e7ec;
+  --green:#16834a;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--light);
+  color:var(--text);
+  line-height:1.6;
+}
+a {text-decoration:none;color:inherit}
+button,input,select,textarea {font:inherit}
+.container {width:min(1150px,92%);margin:auto}
+
+/* HEADER */
+header {
+  background:var(--navy);
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:20;
+  box-shadow:0 3px 15px #0002;
+}
+.nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:82px;
+  gap:15px;
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:20px;
+  font-weight:800;
+}
+.logo {
+  width:53px;
+  height:53px;
+  background:var(--orange);
+  border-radius:15px;
+  display:grid;
+  place-items:center;
+  font-size:28px;
+}
+.brand small {
+  display:block;
+  color:#cbd5e1;
+  letter-spacing:2px;
+  font-size:10px;
+  margin-top:4px;
+}
+nav {display:flex;align-items:center;gap:19px}
+nav a {font-size:14px;font-weight:bold;color:white}
+nav a:hover {color:var(--orange)}
+.menu {
+  display:none;
+  background:transparent;
+  border:1px solid #ffffff55;
+  color:white;
+  border-radius:8px;
+  padding:8px 12px;
+  font-size:22px;
+}
+
+/* BUTTONS */
+.btn {
+  display:inline-block;
+  border:0;
+  padding:13px 20px;
+  border-radius:9px;
+  background:var(--orange);
+  color:#211600;
+  font-weight:bold;
+  cursor:pointer;
+  text-align:center;
+}
+.btn:hover {filter:brightness(.95)}
+.btn-dark {background:var(--navy);color:white}
+.btn-outline {
+  background:transparent;
+  color:white;
+  border:1px solid #ffffff77;
+}
+
+/* HERO */
+.hero {
+  background:linear-gradient(120deg,var(--navy),#29446b);
+  color:white;
+  padding:85px 0;
+}
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:35px;
+  align-items:center;
+}
+.eyebrow {
+  color:#ffd27c;
+  letter-spacing:2px;
+  font-size:13px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+.hero h1 {
+  font-size:clamp(38px,6vw,65px);
+  line-height:1.08;
+  margin:14px 0;
+}
+.hero p {
+  font-size:18px;
+  color:#dce5f2;
+  max-width:650px;
+}
+.hero-actions {display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.hero-card {
+  background:#ffffff12;
+  border:1px solid #ffffff33;
+  border-radius:18px;
+  padding:25px;
+}
+.hero-card h2 {font-size:23px;margin-top:0}
+.hero-card li {margin:10px 0;color:#e6edf7}
+
+/* GENERAL SECTIONS */
+section {padding:65px 0}
+.section-title {
+  text-align:center;
+  max-width:750px;
+  margin:0 auto 35px;
+}
+.section-title h2 {
+  font-size:32px;
+  color:var(--navy);
+  margin:0 0 8px;
+}
+.section-title p {color:var(--muted);margin:0}
+.white-section {background:white}
+
+/* SERVICES */
+.filters {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+  margin-bottom:25px;
+}
+.filter {
+  padding:9px 15px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+  color:var(--navy);
+}
+.filter.active,.filter:hover {
+  background:var(--navy);
+  color:white;
+}
+.service-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.service-card {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:22px;
+  box-shadow:0 4px 15px #00000007;
+  display:flex;
+  flex-direction:column;
+}
+.service-icon {font-size:34px}
+.service-card h3 {color:var(--navy);margin:9px 0 5px}
+.service-card p {color:var(--muted);font-size:14px;flex:1}
+.service-price {font-weight:bold;color:#a45d00;margin:7px 0 13px}
+.service-card button {width:100%}
+.small-note {
+  color:var(--muted);
+  font-size:13px;
+  text-align:center;
+  margin-top:20px;
+}
+
+/* ABOUT */
+.two-column {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+.panel {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:26px;
+}
+.panel h2,.panel h3 {color:var(--navy);margin-top:0}
+.check-list {list-style:none;padding:0}
+.check-list li {margin:11px 0}
+.check-list li:before {
+  content:"✓";
+  color:var(--green);
+  font-weight:bold;
+  margin-right:10px;
+}
+
+/* AREAS */
+.areas {background:#e9edf4;text-align:center}
+.area-tags {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+.area-tag {
+  background:white;
+  border:1px solid var(--border);
+  padding:9px 16px;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+/* BOOKING */
+.booking-box {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:28px;
+  max-width:850px;
+  margin:auto;
+}
+form {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+.field label {
+  display:block;
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+input,select,textarea {
+  width:100%;
+  padding:12px;
+  border:1px solid #ccd2dc;
+  border-radius:8px;
+  background:white;
+  color:var(--text);
+}
+textarea {min-height:120px;resize:vertical}
+.full {grid-column:1/-1}
+.form-note {font-size:12px;color:var(--muted)}
+.submit {width:100%;font-size:16px}
+
+/* FAQ */
+.faq details {
+  background:white;
+  padding:17px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  margin:11px 0;
+}
+.faq summary {
+  cursor:pointer;
+  font-weight:bold;
+  color:var(--navy);
+}
+.faq details p {color:var(--muted)}
+
+/* FOOTER */
+footer {
+  background:#080f1d;
+  color:#dce3ed;
+  padding:45px 0 20px;
+}
+.footer-grid {
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:25px;
+}
+footer h3 {color:white}
+footer a {display:block;margin:9px 0;color:#dce3ed}
+footer a:hover {color:var(--orange)}
+.copyright {
+  border-top:1px solid #ffffff22;
+  margin-top:30px;
+  padding-top:20px;
+  text-align:center;
+  color:#aab4c4;
+}
+.admin-link {
+  color:#aab4c4;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  margin-top:12px;
+}
+
+/* FLOATING CONTACT */
+.floating {
+  position:fixed;
+  right:17px;
+  bottom:17px;
+  z-index:15;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.float-btn {
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:white;
+  font-size:24px;
+  box-shadow:0 4px 15px #0003;
+}
+.float-wa {background:#16834a}
+.float-call {background:#234ca5}
+
+/* ADMIN */
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#000b;
+  z-index:100;
+  padding:20px;
+  overflow:auto;
+}
+.modal.show {display:block}
+.modal-box {
+  background:white;
+  max-width:720px;
+  margin:5vh auto;
+  padding:25px;
+  border-radius:16px;
+}
+.modal-header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.close {
+  border:0;
+  background:#eee;
+  border-radius:8px;
+  padding:9px 13px;
+  cursor:pointer;
+}
+.admin-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+.admin-grid label {
+  display:block;
+  font-weight:bold;
+  font-size:13px;
+  margin-bottom:4px;
+}
+.admin-grid .full {grid-column:1/-1}
+.admin-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:15px;
+}
+.hidden {display:none!important}
+.warning {
+  background:#fff4df;
+  border:1px solid #f5d69a;
+  padding:12px;
+  border-radius:9px;
+  font-size:13px;
+  color:#704b08;
+}
+
+@media(max-width:850px) {
+  .hero-grid,.two-column,.footer-grid {grid-template-columns:1fr}
+  .service-grid {grid-template-columns:repeat(2,1fr)}
+  nav {
+    display:none;
+    position:absolute;
+    left:0;right:0;top:82px;
+    padding:20px 4%;
+    background:var(--navy);
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  nav.open {display:flex}
+  .menu {display:block}
+}
+@media(max-width:550px) {
+  .service-grid,form,.admin-grid {grid-template-columns:1fr}
+  .full,.admin-grid .full {grid-column:auto}
+  .hero {padding:60px 0}
+  .brand {font-size:16px}
+  .logo {width:45px;height:45px}
+  .section-title h2 {font-size:27px}
+  .booking-box {padding:17px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand">
+      <span class="logo">🔧</span>
+      <span>
+        Nottingham Fix & Fit
+        <small>SMALL JOBS • DONE RIGHT</small>
+      </span>
+    </a>
+
+    <button class="menu" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+
+    <nav id="navigation">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#areas" onclick="closeMenu()">Areas</a>
+      <a href="#booking" onclick="closeMenu()">Get a Quote</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+
+<div class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Nottingham Handyman & Home Improvements</div>
+      <h1>Small Jobs.<br>Done Right.</h1>
+      <p>
+        Your local home improvement and handyman service.
+        Painting, plastering, decorating, wall partitioning,
+        furniture assembly and much more.
+      </p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn">Get a Free Quote</a>
+        <a href="tel:07958006552" class="btn btn-outline">Call 07958 006552</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h2>How can we help?</h2>
+      <ul>
+        <li>Painting and decorating</li>
+        <li>Plastering and wall repairs</li>
+        <li>Partition walls and plasterboard</li>
+        <li>Flooring and tiling</li>
+        <li>Carpentry and furniture assembly</li>
+        <li>General home maintenance</li>
+      </ul>
+      <a href="#services" class="btn">View All Services</a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>One local contact for a wide range of home repairs and improvements.</p>
+    </div>
+
+    <div class="filters" id="filters"></div>
+    <div class="service-grid" id="serviceCards"></div>
+
+    <p class="small-note">
+      Prices shown are illustrative starting prices where provided.
+      Jobs marked as quote-only require an individual assessment.
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="white-section" id="about">
+  <div class="container two-column">
+    <div class="panel">
+      <h2>About Nottingham Fix & Fit</h2>
+      <p>
+        We offer practical home maintenance, handyman and improvement
+        services in Nottingham and nearby areas.
+      </p>
+      <p>
+        Whether you need a room painted, a wall repaired, furniture
+        assembled or shelves fitted, tell us about your project and
+        we will discuss a suitable quotation.
+      </p>
+      <ul class="check-list">
+        <li>Friendly local service</li>
+        <li>Free quotation enquiries</li>
+        <li>Small jobs and home improvements</li>
+        <li>Appointments by arrangement</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>How It Works</h2>
+      <ol>
+        <li>Contact us with your job details.</li>
+        <li>Send photographs if possible.</li>
+        <li>We discuss the work and provide a quote.</li>
+        <li>Agree a suitable appointment.</li>
+        <li>We complete the agreed work.</li>
+      </ol>
+      <a href="#booking" class="btn">Request Your Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas" id="areas">
+  <div class="container">
+    <div class="section-title">
+      <h2>Areas We Cover</h2>
+      <p>Based in Nottingham. Contact us with your postcode to check availability.</p>
+    </div>
+
+    <div class="area-tags">
+      <span class="area-tag">Nottingham</span>
+      <span class="area-tag">West Bridgford</span>
+      <span class="area-tag">Beeston</span>
+      <span class="area-tag">Arnold</span>
+      <span class="area-tag">Mapperley</span>
+      <span class="area-tag">Sherwood</span>
+      <span class="area-tag">Bulwell</span>
+      <span class="area-tag">Gedling</span>
+      <span class="area-tag">Carlton</span>
+      <span class="area-tag">Sneinton</span>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="container">
+    <div class="section-title">
+      <h2>Request a Quote or Booking</h2>
+      <p>Tell us about your job. Your enquiry will open in WhatsApp ready for you to send.</p>
+    </div>
+
+    <div class="booking-box">
+      <form id="bookingForm">
+
+        <div class="field">
+          <label for="customerName">Your Name *</label>
+          <input id="customerName" required placeholder="Your full name">
+        </div>
+
+        <div class="field">
+          <label for="customerPhone">Phone Number *</label>
+          <input id="customerPhone" type="tel" required placeholder="Your phone number">
+        </div>
+
+        <div class="field">
+          <label for="customerEmail">Email Address</label>
+          <input id="customerEmail" type="email" placeholder="Your email">
+        </div>
+
+        <div class="field">
+          <label for="postcode">Postcode *</label>
+          <input id="postcode" required placeholder="e.g. NG1 1AA">
+        </div>
+
+        <div class="field">
+          <label for="serviceSelect">Choose a Service *</label>
+          <select id="serviceSelect" required>
+            <option value="">Choose service</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="date">Preferred Date</label>
+          <input id="date" type="date">
+        </div>
+
+        <div class="field">
+          <label for="time">Preferred Time</label>
+          <select id="time">
+            <option>Flexible</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="urgency">When Do You Need It?</label>
+          <select id="urgency">
+            <option>Flexible</option>
+            <option>As soon as possible</option>
+            <option>Within one week</option>
+            <option>Within one month</option>
+            <option>Specific date</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="jobDetails">Describe Your Job *</label>
+          <textarea id="jobDetails" required
+            placeholder="Describe the work, approximate measurements, materials and any other details..."></textarea>
+        </div>
+
+        <div class="field full">
+          <label for="jobPhoto">Job Photograph (Optional)</label>
+          <input id="jobPhoto" type="file" accept="image/*">
+          <p class="form-note">
+            Attach photographs manually in WhatsApp after your message opens.
+          </p>
+        </div>
+
+        <div class="full">
+          <button type="submit" class="btn submit">
+            Send Enquiry on WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq white-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <details>
+      <summary>Are your prices fixed?</summary>
+      <p>Prices are starting guides. We provide a quotation after understanding the work, measurements and materials required.</p>
+    </details>
+
+    <details>
+      <summary>Can I request a painting or plastering quote?</summary>
+      <p>Yes. Tell us the room or wall size, condition and type of work required. Photographs can help us assess the job.</p>
+    </details>
+
+    <details>
+      <summary>Do you build partition walls?</summary>
+      <p>We can consider suitable non-structural partition projects. Structural alterations require appropriate professional assessment and approvals.</p>
+    </details>
+
+    <details>
+      <summary>Can I send photographs?</summary>
+      <p>Yes. Open WhatsApp using the enquiry form and attach your photographs to the message.</p>
+    </details>
+
+    <details>
+      <summary>Do you work for landlords?</summary>
+      <p>We welcome enquiries for suitable small property maintenance jobs. Contact us for a quotation.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>Nottingham Fix & Fit</h3>
+        <p>
+          Handyman, decorating and home improvement services
+          in Nottingham.
+        </p>
+        <strong>Small Jobs. Done Right.</strong>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#services">All Services</a>
+        <a href="#about">About Us</a>
+        <a href="#areas">Areas We Cover</a>
+        <a href="#booking">Request a Quote</a>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <a id="footerPhone" href="tel:07958006552">📞 07958 006552</a>
+        <a id="footerWhatsApp" href="https://wa.me/447958006552">💬 WhatsApp</a>
+        <a id="footerEmail" href="mailto:nottinghamfixandfit@gmail.com">✉️ nottinghamfixandfit@gmail.com</a>
+        <p>Nottingham, United Kingdom</p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Nottingham Fix & Fit. All rights reserved.
+      <br>
+      <button class="admin-link" onclick="openAdmin()">Admin Login</button>
+    </div>
+  </div>
+</footer>
+
+<div class="floating">
+  <a class="float-btn float-wa" id="floatingWhatsApp"
+     href="https://wa.me/447958006552" target="_blank" rel="noopener"
+     aria-label="WhatsApp">💬</a>
+  <a class="float-btn float-call" id="floatingCall"
+     href="tel:07958006552" aria-label="Call">📞</a>
+</div>
+
+<!-- ADMIN MODAL -->
+<div class="modal" id="adminModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2>Website Admin</h2>
+      <button class="close" onclick="closeAdmin()">✕ Close</button>
+    </div>
+
+    <div id="loginPanel">
+      <p>Enter your admin password.</p>
+      <label for="adminPassword">Admin Password</label>
+      <input type="password" id="adminPassword"
+             placeholder="Enter password">
+      <div class="admin-actions">
+        <button class="btn btn-dark" onclick="loginAdmin()">Log In</button>
+      </div>
+      <p class="form-note">Temporary demonstration admin system.</p>
+    </div>
+
+    <div id="dashboard" class="hidden">
+
+      <h3>Business Contact Details</h3>
+
+      <div class="admin-grid">
+        <div>
+          <label for="editEmail">Email Address</label>
+          <input id="editEmail" type="email">
+        </div>
+
+        <div>
+          <label for="editPhone">Phone Number</label>
+          <input id="editPhone">
+        </div>
+      </div>
+
+      <h3 style="margin-top:25px">Service Prices</h3>
+      <div class="admin-grid" id="priceEditor"></div>
+
+      <div class="admin-actions">
+        <button class="btn" onclick="saveChanges()">Save Changes</button>
+        <button class="btn btn-dark" onclick="logoutAdmin()">Log Out</button>
+      </div>
+
+      <hr>
+
+      <h3>Change Admin Password</h3>
+      <label for="newPassword">New Password</label>
+      <input type="password" id="newPassword"
+             placeholder="At least 10 characters">
+      <button class="btn btn-dark" onclick="changePassword()">
+        Update Password
+      </button>
+
+      <hr>
+
+      <div class="warning">
+        This is a simple single-file demonstration admin panel.
+        Passwords and settings are stored in the browser and are not
+        protected by a secure server. Price and contact edits here
+        affect this browser only, not every visitor's copy of the website.
+        Do not store sensitive customer information in this demo.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+
+/* WEBSITE SETTINGS */
+
+const DEFAULT_PASSWORD = "NFixFit-2026!";
+const STORAGE_KEY = "nottinghamFixFitWebsiteV4";
+
+const DEFAULT_SERVICES = [
+
+{category:"Handyman",icon:"📺",name:"TV Wall Mounting",description:"TV bracket installation and secure wall mounting.",price:50},
+
+{category:"Handyman",icon:"🪟",name:"Curtains & Blinds",description:"Curtain poles, tracks and blind installation.",price:35},
+
+{category:"Handyman",icon:"🖼️",name:"Pictures & Mirrors",description:"Hanging pictures, mirrors and decorations.",price:25},
+
+{category:"Handyman",icon:"🪑",name:"Furniture Assembly",description:"Assembly of tables, chairs, desks and flat-pack furniture.",price:35},
+
+{category:"Handyman",icon:"🛏️",name:"Beds & Wardrobes",description:"Bedroom furniture assembly and adjustments.",price:45},
+
+{category:"Handyman",icon:"🧰",name:"Shelves & Wall Fixings",description:"Shelves, rails and suitable wall fixings.",price:30},
+
+{category:"Painting",icon:"🎨",name:"Interior Painting",description:"Painting walls and ceilings in homes and rooms.",price:0},
+
+{category:"Painting",icon:"🖌️",name:"Painting & Decorating",description:"Interior decorating and finishing work.",price:0},
+
+{category:"Painting",icon:"🚪",name:"Doors & Woodwork Painting",description:"Painting doors, skirting boards and woodwork.",price:0},
+
+{category:"Painting",icon:"🧻",name:"Wallpapering",description:"Wallpaper hanging, stripping and preparation.",price:0},
+
+{category:"Plastering",icon:"🧱",name:"Plastering",description:"General plastering and suitable wall repairs.",price:0},
+
+{category:"Plastering",icon:"🏠",name:"Wall Skimming",description:"Skimming suitable walls to create a smooth finish.",price:0},
+
+{category:"Plastering",icon:"🔨",name:"Ceiling Repairs",description:"Minor plaster and ceiling surface repairs.",price:0},
+
+{category:"Plastering",icon:"🧰",name:"Plasterboard Installation",description:"Plasterboard fitting and preparation.",price:0},
+
+{category:"Partitioning",icon:"🏗️",name:"Wall Partitioning",description:"Suitable non-structural stud partition walls.",price:0},
+
+{category:"Partitioning",icon:"🚧",name:"Room Dividers",description:"Room division and suitable internal partition solutions.",price:0},
+
+{category:"Partitioning",icon:"📐",name:"Stud Wall Installation",description:"Non-load-bearing timber stud wall installation.",price:0},
+
+{category:"Flooring & Tiling",icon:"🧩",name:"Wall & Floor Tiling",description:"Suitable tile installation and replacement.",price:0},
+
+{category:"Flooring & Tiling",icon:"🪵",name:"Laminate Flooring",description:"Laminate flooring installation and repairs.",price:0},
+
+{category:"Flooring & Tiling",icon:"🧱",name:"Grouting Repairs",description:"Minor grout repairs and refreshes.",price:0},
+
+{category:"Carpentry",icon:"🪚",name:"Small Carpentry Jobs",description:"General small woodwork and carpentry tasks.",price:0},
+
+{category:"Carpentry",icon:"📏",name:"Skirting & Architraves",description:"Skirting boards, trims and door surrounds.",price:0},
+
+{category:"Carpentry",icon:"🚪",name:"Doors & Handles",description:"Minor door, hinge and handle jobs.",price:30},
+
+{category:"Kitchen & Bathroom",icon:"🍽️",name:"Kitchen Repairs",description:"Suitable minor kitchen repairs and fitting.",price:0},
+
+{category:"Kitchen & Bathroom",icon:"🚿",name:"Bathroom Repairs",description:"Minor bathroom maintenance and improvements.",price:0},
+
+{category:"Kitchen & Bathroom",icon:"🛠️",name:"Silicone & Sealant",description:"Replacement silicone and suitable sealing jobs.",price:0},
+
+{category:"Outdoor",icon:"🌳",name:"Fence & Gate Repairs",description:"Suitable minor fence and garden gate repairs.",price:0},
+
+{category:"Outdoor",icon:"🏡",name:"Outdoor Maintenance",description:"Small outdoor household maintenance jobs.",price:0},
+
+{category:"General",icon:"🔧",name:"General Home Maintenance",description:"Everyday small household repairs and improvements.",price:30},
+
+{category:"General",icon:"🏘️",name:"Landlord Maintenance",description:"Suitable small repairs and rental property maintenance.",price:0}
+
+];
+
+
+/* LOAD SETTINGS */
+
+function loadSettings() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+
+    return {
+      email:saved.email || "nottinghamfixandfit@gmail.com",
+      phone:saved.phone || "07958 006552",
+      password:saved.password || DEFAULT_PASSWORD,
+      services:Array.isArray(saved.services) ? saved.services : DEFAULT_SERVICES
+    };
+  } catch(error) {
+    return {
+      email:"nottinghamfixandfit@gmail.com",
+      phone:"07958 006552",
+      password:DEFAULT_PASSWORD,
+      services:DEFAULT_SERVICES
+    };
+  }
+}
+
+let settings = loadSettings();
+
+function saveStorage() {
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(settings));
+}
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g,function(char) {
+    return {
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#39;"
+    }[char];
+  });
+}
+
+function phoneDigits() {
+  return settings.phone.replace(/\D/g,"");
+}
+
+function whatsappNumber() {
+  let number = phoneDigits();
+  if(number.startsWith("0")) number = number.substring(1);
+  if(!number.startsWith("44")) number = "44" + number;
+  return number;
+}
+
+
+/* MENU */
+
+function toggleMenu() {
+  document.getElementById("navigation").classList.toggle("open");
+}
+
+function closeMenu() {
+  document.getElementById("navigation").classList.remove("open");
+}
+
+
+/* SERVICE FILTERS */
+
+let currentFilter = "All";
+
+function renderFilters() {
+  const categories = ["All",...new Set(settings.services.map(s=>s.category))];
+
+  document.getElementById("filters").innerHTML =
+    categories.map(category=>`
+      <button class="filter ${category===currentFilter?"active":""}"
+      onclick="filterServices('${escapeHTML(category)}')">
+      ${escapeHTML(category)}
+      </button>
+    `).join("");
+}
+
+function filterServices(category) {
+  currentFilter = category;
+  renderFilters();
+  renderServices();
+}
+
+function renderServices() {
+  const list = settings.services.filter(service=>
+    currentFilter==="All" || service.category===currentFilter
+  );
+
+  document.getElementById("serviceCards").innerHTML =
+    list.map(service=>`
+      <article class="service-card">
+        <div class="service-icon">${escapeHTML(service.icon)}</div>
+        <h3>${escapeHTML(service.name)}</h3>
+        <p>${escapeHTML(service.description)}</p>
+        <div class="service-price">
+          ${Number(service.price)>0
+            ? "From £"+Number(service.price).toFixed(0)
+            : "Please enquire for a quote"}
+        </div>
+        <button class="btn"
+          onclick="selectService('${escapeHTML(service.name)}')">
+          Request Quote
+        </button>
+      </article>
+    `).join("");
+
+  const select = document.getElementById("serviceSelect");
+  const previous = select.value;
+
+  select.innerHTML =
+    '<option value="">Choose a service</option>' +
+    settings.services.map(s=>
+      `<option value="${escapeHTML(s.name)}">${escapeHTML(s.name)}</option>`
+    ).join("") +
+    '<option value="Other / Not Listed">Other / Not Listed</option>';
+
+  if(settings.services.some(s=>s.name===previous)) {
+    select.value=previous;
+  }
+}
+
+function selectService(name) {
+  document.getElementById("serviceSelect").value=name;
+  document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+}
+
+
+/* CONTACT DETAILS */
+
+function updateContact() {
+  document.getElementById("footerEmail").href="mailto:"+settings.email;
+  document.getElementById("footerEmail").textContent="✉️ "+settings.email;
+
+  document.getElementById("footerPhone").href="tel:"+phoneDigits();
+  document.getElementById("footerPhone").textContent="📞 "+settings.phone;
+
+  document.getElementById("footerWhatsApp").href=
+    "https://wa.me/"+whatsappNumber();
+
+  document.getElementById("floatingWhatsApp").href=
+    "https://wa.me/"+whatsappNumber();
+
+  document.getElementById("floatingCall").href=
+    "tel:"+phoneDigits();
+}
+
+
+/* BOOKING FORM */
+
+document.getElementById("bookingForm").addEventListener("submit",function(event) {
+  event.preventDefault();
+
+  const value = id => document.getElementById(id).value.trim();
+
+  const message =
+`Hello Nottingham Fix & Fit. I would like a quotation.
+
+Customer Name: ${value("customerName")}
+Phone: ${value("customerPhone")}
+Email: ${value("customerEmail") || "Not provided"}
+Postcode: ${value("postcode")}
+
+Service: ${value("serviceSelect")}
+Preferred Date: ${value("date") || "Flexible"}
+Preferred Time: ${value("time")}
+Urgency: ${value("urgency")}
+
+Job Description:
+${value("jobDetails")}
+
+Please contact me to discuss the quotation.`;
+
+  const link =
+    "https://wa.me/"+whatsappNumber()+"?text="+encodeURIComponent(message);
+
+  window.open(link,"_blank","noopener");
+});
+
+
+/* ADMIN LOGIN */
+
+function openAdmin() {
+  document.getElementById("adminModal").classList.add("show");
+  document.getElementById("loginPanel").classList.remove("hidden");
+  document.getElementById("dashboard").classList.add("hidden");
+  document.getElementById("adminPassword").value="";
+}
+
+function closeAdmin() {
+  document.getElementById("adminModal").classList.remove("show");
+}
+
+function loginAdmin() {
+  const password=document.getElementById("adminPassword").value;
+
+  if(password===settings.password) {
+    document.getElementById("loginPanel").classList.add("hidden");
+    document.getElementById("dashboard").classList.remove("hidden");
+    populateAdmin();
+  } else {
+    alert("Incorrect password. Please check and try again.");
+  }
+}
+
+function populateAdmin() {
+  document.getElementById("editEmail").value=settings.email;
+  document.getElementById("editPhone").value=settings.phone;
+
+  document.getElementById("priceEditor").innerHTML =
+    settings.services.map((service,index)=>`
+      <div>
+        <label for="price${index}">${escapeHTML(service.name)} (£)</label>
+        <input type="number" min="0" step="1"
+          id="price${index}" value="${Number(service.price)}">
+      </div>
+    `).join("");
+}
+
+function saveChanges() {
+  const email=document.getElementById("editEmail").value.trim();
+  const phone=document.getElementById("editPhone").value.trim();
+
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  if(!phone) {
+    alert("Please enter a phone number.");
+    return;
+  }
+
+  settings.email=email;
+  settings.phone=phone;
+
+  settings.services=settings.services.map((service,index)=>({
+    ...service,
+    price:Math.max(0,Number(document.getElementById("price"+index).value)||0)
+  }));
+
+  saveStorage();
+  renderServices();
+  renderFilters();
+  updateContact();
+
+  alert("Changes saved in this browser.");
+}
+
+function changePassword() {
+  const password=document.getElementById("newPassword").value;
+
+  if(password.length<10) {
+    alert("Password must be at least 10 characters.");
+    return;
+  }
+
+  settings.password=password;
+  saveStorage();
+
+  document.getElementById("newPassword").value="";
+  alert("Your admin password has been changed in this browser.");
+}
+
+function logoutAdmin() {
+  document.getElementById("dashboard").classList.add("hidden");
+  document.getElementById("loginPanel").classList.remove("hidden");
+  document.getElementById("adminPassword").value="";
+}
+
+
+/* CLOSE MODAL */
+
+document.getElementById("adminModal").addEventListener("click",function(event) {
+  if(event.target===this) closeAdmin();
+});
+
+document.addEventListener("keydown",function(event) {
+  if(event.key==="Escape") closeAdmin();
+});
+
+
+/* INITIALISE */
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+renderFilters();
+renderServices();
+updateContact();
+
+</script>
+
+</body>
+</html>
